@@ -1,0 +1,47 @@
+{
+  "title": "Pengajuan demonstrasi",
+  "steps": [
+    {
+      "id": "S1",
+      "label": "Ajukan",
+      "actor": "Pemanggil",
+      "before": "Perintah submit",
+      "after": "pending",
+      "evidence": "workflow.py:3",
+      "tables": {}
+    },
+    {
+      "id": "S2",
+      "label": "Setujui",
+      "actor": "Pemanggil",
+      "before": "pending",
+      "after": "approved",
+      "evidence": "workflow.py:8",
+      "tables": {}
+    },
+    {
+      "id": "S3",
+      "label": "Tolak",
+      "actor": "Pemanggil",
+      "before": "pending",
+      "after": "rejected",
+      "evidence": "workflow.py:11",
+      "tables": {}
+    }
+  ],
+  "edges": [
+    {
+      "from": "S1",
+      "to": "S2",
+      "label": "disetujui"
+    },
+    {
+      "from": "S1",
+      "to": "S3",
+      "label": "ditolak"
+    }
+  ],
+  "unknowns": [
+    "Contoh memakai dictionary dalam memori, bukan tabel database. Tidak ada pemeriksaan peran dalam handler."
+  ]
+}
